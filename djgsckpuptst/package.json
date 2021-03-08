@@ -1,0 +1,22 @@
+{
+  "name": "djgsckpuptst",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production",
+    "watch": "webpack --watch --info-verbosity verbose"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "glob": "^7.1.6",
+    "sockpuppet-js": "^0.5.2",
+    "stimulus": "^2.0.0",
+    "stimulus_reflex": "^3.4.1",
+    "webpack": "^5.24.3",
+    "webpack-cli": "^4.5.0"
+  }
+}
