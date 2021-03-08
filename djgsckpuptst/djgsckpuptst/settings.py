@@ -39,6 +39,19 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+#START channels configration ####################################################
+# NB: CHANNEL_LAYERS uses the in-memory channel layer here which is ok for dev
+#     but not for production
+#
+CHANNEL_LAYERS = {
+            "default": {
+                        "BACKEND": "channels.layers.InMemoryChannelLayer"
+                            }
+            }
+ASGI_APPLICATION = 'sockpuppet.routing.application'
+#STOP channels configration ####################################################
+
+
 
 # Application definition
 
