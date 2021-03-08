@@ -1,7 +1,11 @@
 from django.urls import path
 
-from . import views
+from .views  import polls_increment
+from . import viewsAvoidNameClash  as viewsANC
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('', viewsANC.index, name='index'),
+    path('increment/', polls_increment.pollsincrement, name='increment'),
 ]
+
+

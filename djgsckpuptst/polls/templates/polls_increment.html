@@ -1,0 +1,13 @@
+
+{% load static %}
+<body>
+    
+    
+    <script src="{% static 'sockpuppet/sockpuppet.js' %}"></script>
+    <a
+      href="#"
+      data-reflex="click->Polls_IncrementReflex#increment"
+      data-count="{{ count }}"
+    >Increment </a><span>{{ count }}</span>
+    
+</body>
