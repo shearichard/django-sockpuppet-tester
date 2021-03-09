@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
+from django.shortcuts import redirect
 
 from .models import Todo
+from .models import TodoForm
 
 def index(request):
     todo_list = Todo.objects.order_by('title')
@@ -13,3 +15,16 @@ def index(request):
         'todo_list': todo_list,
     }
     return HttpResponse(template.render(context, request))
+
+def insert(request):
+    if request.method == "POST":
+        f = TodoForm(request.POST)
+        if f.is_valid():
+            todo_obj= Todo.objects.create(title=f.data['title'], description=f.data['description'])
+            todo_obj.save()
+
+        return redirect('/polls')
+    else:
+        template = loader.get_template('todo/detail.html')
+        context = {}
+        return HttpResponse(template.render(context, request))
