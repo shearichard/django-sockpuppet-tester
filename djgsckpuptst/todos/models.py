@@ -1,4 +1,4 @@
-# polls/models.py
+# todos/models.py
 from django.db import models
 from django import forms
 

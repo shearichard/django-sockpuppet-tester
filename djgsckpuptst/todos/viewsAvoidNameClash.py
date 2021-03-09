@@ -23,7 +23,7 @@ def insert_todo(request):
             todo_obj= Todo.objects.create(title=f.data['title'], description=f.data['description'])
             todo_obj.save()
 
-        return redirect('/polls')
+        return redirect('/todos')
     else:
         template = loader.get_template('todo/detail.html')
         context = {}
@@ -32,4 +32,4 @@ def insert_todo(request):
 def delete_todo(request, todo_id):
     query = Todo.objects.get(pk=todo_id)
     query.delete()
-    return redirect('/polls')
+    return redirect('/todos')

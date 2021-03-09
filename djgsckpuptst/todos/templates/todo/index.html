@@ -7,7 +7,7 @@
     </div>
 	<div class="row">
         <div class="col-md-6 col-sm-10 mx-auto p-0">
-            <h2>Todo List</h2>
+            <h1 class="">Todo List</h1>
         </div>
     </div>
 	<div class="row">
@@ -18,10 +18,10 @@
                 {% for todo in todo_list %}
                     <tr>
                         <td class="text-center" style="padding-top: 0.5em; padding-bottom: 0.5em">
-                            <a href="/polls/delete/{{ todo.id }}/" class="btn btn-sm btn-danger"><span class="glyphicon glyphicon-trash">Delete</span></a>
+                            <a href="/todos/delete/{{ todo.id }}/" class="btn btn-sm btn-danger"><span class="glyphicon glyphicon-trash">Delete</span></a>
                         </td>
                         <td style="padding-left: 1em;">
-                            {{ todo.title }}</a></li>
+                            {{ todo.title }}
                         </td>
                     </tr>
                 {% endfor %}
@@ -29,7 +29,7 @@
             </div>
             <br/>
             <div class="">
-                <a href="/polls/insert" class="btn btn-primary" target="_self" "noopener noreferrer">Add Task</a>
+                <a href="/todos/insert" class="btn btn-primary" target="_self" "noopener noreferrer">Add Task</a>
             </div>
         </div>
 	  </div>
