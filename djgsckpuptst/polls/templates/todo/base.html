@@ -12,11 +12,11 @@
 
 	<title>{% block title %}Default Page Title - You should never see this{% endblock %}</title>
   </head>
-  <body>
+  <body class="bg-info">
     <!-- Experimental placement of sockpuppet js START-->
     <script src="{% static 'sockpuppet/sockpuppet.js' %}"></script>
     <!-- Experimental placement of sockpuppet js STOP -->
-    <div id="content">
+    <div id="content" class="">
         {% block content %}{% endblock %}
     </div>
 

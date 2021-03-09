@@ -2,8 +2,9 @@
 {%block title %}List of Todos{% endblock %}
 
 {% block content %}
-
-    <h1 class="text-white text-uppercase text-center my-4">Todo app</h1>
+	<div class="row">
+        &nbsp;
+    </div>
 	<div class="row">
         <div class="col-md-6 col-sm-10 mx-auto p-0">
             <h2>Todo List</h2>
@@ -13,15 +14,22 @@
 	  <div class="col-md-6 col-sm-10 mx-auto p-0">
 		<div class="card p-3">
             <div class="">
-                <a href="/polls/insert" class="btn btn-primary" target="_self" "noopener noreferrer">Add Task</a>
+                <table class="table-bordered table-hover" style="width:100%">
+                {% for todo in todo_list %}
+                    <tr>
+                        <td class="text-center" style="padding-top: 0.5em; padding-bottom: 0.5em">
+                            <a href="/polls/delete/{{ todo.id }}/" class="btn btn-sm btn-danger"><span class="glyphicon glyphicon-trash">Delete</span></a>
+                        </td>
+                        <td style="padding-left: 1em;">
+                            {{ todo.title }}</a></li>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </table>
             </div>
             <br/>
             <div class="">
-                <ul class="list-group list-group-flush">
-                    {% for todo in todo_list %}
-                        <li class="list-group-item"><a href="/todo/{{ todo.id }}/">{{ todo.title }}</a></li>
-                    {% endfor %}
-                </ul>
+                <a href="/polls/insert" class="btn btn-primary" target="_self" "noopener noreferrer">Add Task</a>
             </div>
         </div>
 	  </div>

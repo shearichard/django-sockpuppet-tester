@@ -16,7 +16,7 @@ def index(request):
     }
     return HttpResponse(template.render(context, request))
 
-def insert(request):
+def insert_todo(request):
     if request.method == "POST":
         f = TodoForm(request.POST)
         if f.is_valid():
@@ -28,3 +28,8 @@ def insert(request):
         template = loader.get_template('todo/detail.html')
         context = {}
         return HttpResponse(template.render(context, request))
+
+def delete_todo(request, todo_id):
+    query = Todo.objects.get(pk=todo_id)
+    query.delete()
+    return redirect('/polls')
