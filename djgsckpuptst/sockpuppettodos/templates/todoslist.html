@@ -1,0 +1,14 @@
+
+{% load static %}
+<body>
+    
+    
+    <script type="module" src="{% static 'js/todoslist.js' %}"></script>
+
+    <a  href="#"
+        data-controller="todoslist"
+        data-action="click->todoslist#increment"
+        data-count="{{ count }}"
+    >Increment </a><span>{{ count }}</span>
+    
+</body>

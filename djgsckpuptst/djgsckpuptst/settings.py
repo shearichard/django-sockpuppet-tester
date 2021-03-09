@@ -56,6 +56,7 @@ ASGI_APPLICATION = 'sockpuppet.routing.application'
 
 INSTALLED_APPS = [
     'todos',
+    'sockpuppettodos',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
