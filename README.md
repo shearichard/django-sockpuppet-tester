@@ -11,11 +11,11 @@ This project makes use of pipenv so the virtualenv needs to be started in the pi
 
 ### Running backend locally 
 
-Don't forget when running the dev server you have to enable access from outside the VM by modifying the default binding. It's also necessary to reference the relevant settings file.
+Don't forget when running the dev server you have to enable access from outside the VM by modifying the default binding.
 
 Here's an example of doing that.
 
 ```
-python manage.py runserver 0.0.0.0:8000 --settings=backend.settings.local
+python manage.py runserver 0.0.0.0:8000
 ```
 
